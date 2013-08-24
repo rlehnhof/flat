@@ -1,0 +1,797 @@
+/* Watch out. This file bugs (in the header) when it is formated with Eclipse (Ctrl+Shift+F)*/
+
+/* FONTELLO */
+@font-face {  
+	font-family: "fontello";  
+	src: url(fonts/fontello-62978c83/font/fontello.eot);  /* EOT for IE */
+	src: local("fontello"),
+	url(fonts/fontello-62978c83/font/fontello.ttf) format("truetype"); /* non-IE */  
+} 
+
+.fontello {
+	font-family: fontello;
+}
+
+
+/* BASE */
+
+div.meta {
+	color: #7f8c8d;
+	margin-top: 12px;
+	margin-bottom: 4px;
+}
+
+* {
+    font-family: Trebuchet MS, Tahoma, sans-serif;
+}
+a {
+    color: #2c3e50;
+	background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+	background: #2c3e50;
+    text-decoration: underline;
+}
+a img {
+    border: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1590px;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+    border: 1px solid #666;
+    padding: 0.1em;
+	color: #666;
+}
+input[type=text],
+input[type=password],
+textarea {
+    padding: 0.2em;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+select:focus,
+textarea:focus {
+    border-color: 1px solid #666;
+}
+p.tipMsg,
+p.error,
+p.success {
+    border: 1px solid;
+    font-size: small;
+    margin: 0.5em;
+    padding: 0.5em;
+    width: 70%;
+}
+p.tipMsg {
+    background: #FFFF99;
+    border-color: #CC9900;
+    color: #CC9900;
+}
+p.error {
+    background: #FCC;
+    border-color: #966;
+    color: #633;
+}
+p.success {
+    background: #CFC;
+    border-color: #696;
+    color: #363;
+}
+td#availability {
+    color: #285;
+    font-weight: bold;
+}
+td#availability.not-available {
+    color: #F00;
+}
+textarea {
+    font-size: small;
+    padding: 0.2em;
+}
+th {
+    padding-right: 1em;
+    text-align: right;
+}
+
+/* HEADER */
+
+div#header {
+    background: white;
+    clear: both;
+}
+div#header:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+* html div#header {
+    height: 1%;
+}
+h1 {
+    float: left;
+    font-size: x-large;
+	font-weight: bold;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 1em;
+}
+html > body h1 {
+    padding-left: 0.5em;
+}
+html > body div#header.popup h1 {
+    padding: 0.5em 0.5em 0.5em 50px;
+}
+/*html > body div#header #welcome {
+    position:absolute;
+    left:75px;
+}*/
+#welcome {
+    border: 10px solid #995;
+    width: 66%;
+    padding: 10px;
+    text-align:center;
+    font-size: medium;
+}
+#bottom {
+	padding-top: 10px;
+	text-align: center;
+	font-size: xx-small;
+}
+h1 a:link, h1 a:visited, h1 a:focus {
+	color: #2c3e50;
+	background: white;
+	font-weight: bold;
+}
+h1 a:hover {
+	text-decoration: none;
+	color: white;
+	background: #2c3e50;
+}
+h2 {
+    background: #666;
+    clear: both;
+    color: white;
+    font-size: medium;
+    margin: 0 0 1em 0;
+    padding: 0.5em 1em;
+	text-transform: uppercase;
+}
+h2 a, h2 a:hover {
+    color: #DDD;
+}
+
+/*sup {
+    color: #77ABE0;
+    font-weight: bold;
+}*/
+
+
+
+
+/* NAVIGATION */
+
+ul#navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 1.75em 1em;
+    width: auto;
+}
+ul#navigation a {
+    font-size: medium;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+	font-size: 1.3em;
+}
+ul#navigation a:hover {
+	text-decoration: none;
+	color: white;
+	background: #2c3e50;
+}
+ul#navigation li {
+    float: left;
+}
+ul#navigation li.access {
+    float: right;
+}
+
+/* BOOKMARKS */
+
+ol#bookmarks {
+    list-style-type: none;
+    padding: 0 1em;
+    width: 70%;
+}
+html > body ol#bookmarks {
+    margin: 0 1em;	
+    padding: 0;
+}
+img.thumbnail {			/* must test */
+    float: left;
+    padding: 1px;
+    margin-right: 6px;
+    margin-bottom:4px;
+    cursor:pointer;
+    border:1px solid #AAA;
+}
+div.link a {
+	color: #2c3e50;
+	font-weight: bold;
+	font-size: medium;
+}
+div.link a:link, div.link a:visited {
+	color: #2c3e50;
+}
+div.link a:hover, div.link a:active  {
+	text-decoration: none;
+	color: white;
+	background: #2c3e50;
+}
+div.address, div.meta {
+	color: #7f8c8d;
+}
+
+div.meta span {		/* wtf is this? */
+    color: #F00;
+}
+
+div.meta a:link, div.meta a:visited {
+	background: #bdc3c7;
+	color: #2c3e50;
+	font-weight: bold;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+div.meta a:hover , div.meta a:active{
+	background: #2c3e50;
+	color: white;
+	text-decoration: none;
+}
+
+div.privateNote {	/* must test */
+    font-variant: small-caps;
+    font-size: small;
+    text-align: right;
+}
+li.xfolkentry {
+    margin-bottom: 20px;
+    padding: 0px 0px;
+    overflow: auto;
+}
+html > body li.xfolkentry {
+    /* border-bottom: 1px dotted #AAA; */
+}
+li.xfolkentry div {
+    padding: 0.4em;
+}
+li.xfolkentry.deleted {
+    opacity: 0.5;
+}
+/* Activate if needed:
+li.xfolkentry.private {
+    border-left: 3px solid #F00;
+}
+li.xfolkentry.shared {
+    border-left: 3px solid #FA0;
+}
+*/
+li.below-threshold > div {			/* wtf is this? */
+    border-right: 5px dotted #F00;
+}
+
+li.xfolkentry div div.description span.anchorBookmark {
+    /*font-family:monospace;*/
+}
+
+/* bookmark voting */			/* I deactivated the voting system in the PHP files, so I won't touch any of the CSS related to it.*/
+
+.vote-badge {
+    float: left;
+    width: 3em;
+    margin: 5px;
+    border: 1px solid #CCCC88;
+    font-weight: bold;
+    /*border-radius: 10px;*/
+    -moz-border-radius: 10px;
+}
+.vote-badge span, .vote-badge a {
+    display: block;
+    text-align: center;
+}
+.vote-badge a:hover {
+    text-decoration: none;
+}
+.vote-badge .vote-for {
+    /*border-top-right-radius: 10px;*/
+    /*border-top-left-radius: 10px;*/
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-topleft: 10px;
+}
+.vote-badge .vote-against {
+    /*border-bottom-right-radius: 10px;*/
+    /*border-bottom-left-radius: 10px;*/
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+}
+.vote-badge a.vote-for:hover {
+    background-color: #ccffbb;
+}
+.vote-badge a.vote-against:hover {
+    background-color: #ffcccc;
+}
+.vote-badge-for .vote-for-inactive {
+    color: transparent;
+    background-color: #ccffbb;
+}
+.vote-badge-against .vote-against-inactive {
+    color: transparent;
+    background-color: #ffcccc;
+}
+
+/* bookmark voting horizontal */
+div.vote-horiz .voting {
+    font-weight: bold;
+}
+li.xfolkentry div.vote-horiz-for {
+/*    border-left: 1em solid #ccffbb;*/
+/*    padding-left: 0.5em;*/
+}
+li.xfolkentry div.vote-horiz-against {
+/*    border-left: 1em solid #ffcccc;*/
+/*    padding-left: 0.5em;*/
+}
+.vote-horiz a, .vote-horiz .vote-for-inactive,
+.vote-horiz .vote-against-inactive {
+    padding-left: 1.5em;
+    margin-left: 0.7em;
+}
+.vote-horiz a.vote-for:hover {
+    background-color: #ccffbb;
+}
+.vote-horiz a.vote-against:hover {
+    background-color: #ffcccc;
+}
+.vote-horiz .vote-for-inactive, .vote-horiz .vote-against-inactive {
+    color: #AAA;
+}
+.vote-horiz .vote-for {
+    background: url(images/vote-for.png) no-repeat;
+}
+.vote-horiz .vote-against {
+    background: url(images/vote-against.png) no-repeat;
+}
+.vote-horiz .vote-for-inactive {
+    background: url(images/vote-for-voted.png) no-repeat;
+}
+.vote-horiz .vote-against-inactive {
+    background: url(images/vote-against-voted.png) no-repeat;
+}
+
+
+/* SIDEBAR */
+
+div#sidebar {
+    font-size: small;
+    position: absolute;
+    right: 1em;
+    top: 10em;
+    width: 25%;
+	background: white;
+}
+div#sidebar a:hover {
+	text-decoration: none;
+}
+div#sidebar>div {
+    background: white;
+    color: #2c3e50;
+    margin-bottom: 1em;
+}
+div#sidebar h2 {
+    background: white;
+    border: 0;
+    color: #666;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0.5em 0;
+}
+div#sidebar hr {
+    display: none;
+}
+div#sidebar p {
+    margin: 1em;
+}
+div#sidebar p.tags a {
+    margin: 0;
+}
+div#sidebar table {
+    margin: 0.5em 0.5em 0 0.5em;
+}
+div#sidebar table td {
+    padding-bottom: 0.1em;
+    padding-right: 0.2em;
+}
+/*
+div#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5em;
+}
+div#sidebar ul li {
+    margin: 0.5em 0;
+}*/
+
+div#tagactions, div#related {
+    padding: 0.5em;
+}
+
+.crossTags {
+    padding: 0px 0px; 
+	color: #bdc3c7;
+	background: transparent;
+    /* border: 1px solid #2c3e50; */       /* for standard plus signs */
+}
+
+.sign a:link, .sign a:visited {
+    color: #bdc3c7;
+	background: transparent;
+	margin-bottom: -2px;
+}
+
+.sign a:focus, .sign a:hover {
+	color: #2c3e50;
+	background: white;
+    background-color: white;
+}
+
+.action a:link, .action a:visited {
+    color: #2c3e50;
+	background-color: white;
+}
+
+.action a:hover, .action a:focus {
+	color: white;
+    background-color: #2c3e50;
+}
+
+div#sidebar>div#maintagsmenu {		/* = featured menu tags */
+    padding: 0.5em;
+}
+
+
+/* TAGS */
+
+p.commondescription {
+    padding-left:5px;
+    color: #555;
+    font-weight: bold;
+    font-size: medium;
+    border-left: 1px solid #CC8;
+    width: 70%;
+}
+
+p.tags {
+    line-height: 2.25em;
+    /*margin: 2em 10%;*/
+    text-align: justify;
+    vertical-align: middle;
+    width: 70%;
+}
+p.tags a,
+p.tags span {
+    color: #2c3e50;
+    margin-right: 0.5em;
+}
+
+p.tags span:hover {
+    cursor: pointer;
+}
+p.tags span.selected {
+    background: #CEC;
+}
+
+.tags  a:link, .tags  a:visited {
+	color: #2c3e50;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.tags  a:hover, .tags  a:active  {
+	text-decoration: none;
+	color: white;
+	background: #2c3e50;
+}
+
+.anchor {
+    cursor: pointer;
+}
+
+.treeTag {
+	color: #999955;			/* must test, auch drunter */
+}
+.treeTag:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.treeTag.selected {
+    background: #CEC;
+}
+
+/* PROFILE */
+
+table.profile th {
+    width: 10em;
+}
+
+table tr.ssl-current td {
+    background-color: #AFA;
+}
+
+table.profile a:hover {
+    text-decoration: none;
+}
+
+/* OTHER GUFF */
+
+dd {
+	background: #CEC;
+	border-right: 4px solid #ACA;
+	color: #464;
+	padding: 6px;
+}
+dd a:link, dd a:visited {
+	color: #464;
+}
+dd a:focus, dd a:hover {
+	color: #000 !important;
+	text-decoration: underline !important;
+}
+
+dl {
+	font-size: small;
+	margin: 1em;
+	width: 70%;
+}
+dl#profile dd {
+	background: #CDE;
+	border-color: #ABC;
+	color: #247;
+}
+dl#profile dt {
+	background: #BCE;
+	border-color: #9AC;
+	color: #245;
+	display: block;
+	font-weight: bold;
+	padding: 6px;
+}
+dl#profile a:link, dl#profile a:visited {
+	color: #446;
+}
+dl#profile a:focus, dl#profile a:hover {
+	color: #000 !important;
+	text-decoration: underline !important;
+}
+dl#meta dd {
+	line-height: 1.5em;
+}
+dl#meta dt {
+	background: #BDB;
+	color: #353;
+	display: block;
+	font-weight: bold;
+	padding: 6px;
+}
+dt {
+	border-right: 4px solid #9B9;
+}
+dt a:link, dt a:visited {
+	background: #BDB;
+	color: #353;
+	display: block;
+	font-weight: bold;
+	padding: 6px;
+}
+dt a:focus, dt a:hover {
+    background: #ACA;
+    border: 0;
+}
+form {
+	margin: 0;
+}
+form#search {
+       margin-right: 0.75em;
+       color: #CCC;
+       font-size: small;
+       float: right;
+       margin: 0;
+       position: absolute;
+       right: 0;
+       top: 6.2em;
+}
+form label,
+form td,
+form th {
+	font-size: small;
+}
+form table {
+	margin: 0 1em;
+}
+h3 {
+	background: white;
+	color: #666;
+	font-size: small;
+	margin: 2em 1em 1em 1em;
+	padding: 0.25em 0.75em;
+	text-transform: uppercase;
+}
+li {
+	font-size: small;
+	margin-bottom: 0.5em;
+}
+p {
+    font-size: small;
+    margin: 1em;
+}
+p#sort {
+    color: #666;
+    font-size: medium;
+	font-weight: bold;
+    /*float: right;*/
+    /*margin: 0;*/
+    /*position: absolute;*/
+    right: 0;
+    top: 7em;
+	text-transform: uppercase;
+}
+html > body p#sort {
+    /*margin-right: 0.75em;*/
+}
+p#sort a {
+	background: transparent;
+	color: #2c3e50;
+	font-weight: bold;
+    margin-right: 0.5em;
+    padding: 0 1em;
+}
+html > body p#sort a {
+    margin-right: 0;
+}
+p#sort a:hover {
+	text-decoration: none;
+	background: #2c3e50;
+	color: white;
+	font-weight: bold;
+}
+p#sort span {
+    display: none;
+}
+
+p.backToTop{
+	text-align:center;
+}
+p.backToTop a:hover {
+	text-decoration: none;
+	color: white;
+	background: #2c3e50;
+}
+p.paging {
+	font-size: small;
+	margin-left: 1em;
+	text-align:center;
+}
+p.paging a,
+p.paging span.disable {
+	background: #bdc3c7;
+	color: #2c3e50;
+	font-weight: bold;
+	display: inline;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+	margin: 5px;
+}
+p.paging a:hover, p.paging a:active {
+	background: #2c3e50;
+	color: white;
+	text-decoration: none;
+}
+p.paging span {
+	display: none;
+}
+p.paging span.disable {
+	background: #DDD;
+	color: #AAA;
+}
+div.collapsible p.tags {
+	line-height: 2.25em;
+	margin: 1em 2em;
+}
+th label {
+	padding-right: 1em;
+}
+ul {
+	margin-right: 1em;
+	width: 75%;
+}
+
+.adminBackground {
+    /*background: #FFFFFF url(images/logo_24.png) no-repeat scroll center right;*/    
+    /*border-top: 1px solid;
+    border-color: #CC9900;*/
+}
+
+.adminBackground {
+	background: transparent;
+}
+
+a.bookmarklet {
+	padding: 2px;
+	background-color: #AAFAEE;
+}
+
+/* tree styles */
+#related-content.jstree-default.jstree-focused {
+    background: none !important;
+}
+
+
+/* add/edit bookmark */
+.ui-autocomplete {
+    width: 458px;
+}
+
+
+/* two-column link layout */
+
+.leftcolumn {
+	float: left;
+	width: 14%;
+	color: #666;
+}
+
+.leftcolumn a:link, .leftcolumn a:visited {
+	font-weight: bold;
+	color: #bdc3c7;
+	background: transparent;
+}
+
+.leftcolumn a:active, .leftcolumn a:hover {
+	background: transparent;
+	color: #2c3e50;
+	text-decoration: none;
+}
+
+.leftcolumn .date {
+	color: #666;
+	font-size: medium;
+	font-weight: bold;
+}
+
+.rightcolumn {
+	float: right;
+	margin-top: -72px;		/* dirty! */
+	background: #ecf0f1;
+	width: 86%;
+}
