@@ -11,10 +11,13 @@ $lastUsers = $userservice->getUsers(3);
 if ($lastUsers && count($lastUsers) > 0) {
 ?>
 
-<h2><?php echo T_('New Users'); ?></h2>
-<div id="users">
-<table>
 <?php
+if (!$userservice->isLoggedOn()) {
+}
+else {
+echo '<h2>New Users</h2>';
+echo '<div id="users">';
+echo '<table>';
 foreach ($lastUsers as $row) {
     echo '<tr><td>';
     echo  '<a href="'.createURL('profile', $row['username']).'">';
@@ -24,6 +27,7 @@ foreach ($lastUsers as $row) {
     echo '</td></tr>';
 }
 //echo '<tr><td><a href="'.createURL('users').'">...</a></td></tr>';
+}
 ?>
 
 </table>

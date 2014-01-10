@@ -17,7 +17,7 @@ $menu2Tags = $GLOBALS['menu2Tags'];
 
 if (count($menu2Tags) > 0) {
 ?>
-
+<!--
 <h2><?php echo T_('Featured Menu Tags');?></h2>
 
 
@@ -39,6 +39,7 @@ foreach ($menu2Tags as $menu2Tag) {
 ?>
  </ul>
 </div>
+-->
 <script type="text/javascript">
 jQuery("#maintagsmenu")
 .jstree({

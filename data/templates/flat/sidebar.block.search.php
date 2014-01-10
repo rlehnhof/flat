@@ -25,10 +25,13 @@ $lastSearches = $searchhistoryservice->getAllSearches(
 if ($lastSearches && count($lastSearches) > 0) {
 ?>
 
-<h2><?php echo T_('Last Searches'); ?></h2>
-<div id="searches">
- <table>
 <?php
+if (!$userservice->isLoggedOn()) {
+}
+else {
+echo '<h2>Last Searches</h2>';
+echo '<div id="searches">';
+echo ' <table>';
 foreach ($lastSearches as $row) {
     echo '  <tr><td>';
     echo  '<a href="'
@@ -42,6 +45,7 @@ foreach ($lastSearches as $row) {
     echo '</td></tr>' . "\n";
 }
 //echo '<tr><td><a href="'.createURL('users').'">...</a></td></tr>';
+}
 ?>
 
  </table>
