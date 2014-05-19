@@ -248,7 +248,7 @@ if ($currenttag!= '') {
 
 
 
-<ol<?php echo ($start > 0 ? ' start="'. ++$start .'"' : ''); ?> id="bookmarks">
+<div<?php echo ($start > 0 ? ' start="'. ++$start .'"' : ''); ?> id="bookmarks">
 <?php
     $addresses = array();
     foreach ($bookmarks as $key => &$row) {
@@ -409,13 +409,10 @@ if ($currenttag!= '') {
         }
 
 		// Output
-		echo ' <li class="xfolkentry'. $access .'">'."\n";
+		echo ' <div class="xfolkentry'. $access .'">'."\n";
         include 'bookmarks-thumbnail.inc.tpl.php';
         include 'bookmarks-vote.inc.tpl.php';
 
-		echo '  <div>' . "\n"; 		/* opening class adminBackground */
-
-		
 		echo '  <div class="leftcolumn">' . "\n";
 		echo "\n" . '<span class="date"> ' . $update . "</span><br />\n";
 		echo $copy . "<br />\n";
@@ -450,13 +447,11 @@ if ($currenttag!= '') {
 
 		echo " </div>\n";			/* right column closing */
 		
-		echo " </div>\n";  			/* div class adminBackground, line 412 */
-
-		echo " </li>\n";
+		echo " </div>\n";
 	}
 	?>
 
-</ol>
+</div>
 
 	<?php
 	if(getPerPageCount($currentUser)>7) {

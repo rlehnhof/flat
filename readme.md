@@ -1,4 +1,4 @@
-Flat 1.1 for SemanticScuttle 0.98.5.
+Flat 1.2 for SemanticScuttle 0.98.5.
 ------------------------------------
 
 Flat interface for SemanticScuttle by [Roman Lehnhof] (http://www.lehnhof.net).
@@ -8,12 +8,17 @@ Recommended for single users with admin rights and private bookmarks.
 ###Features
 
 * Flat look w/ icons
+* Mobile-friendly
 * Removed voting system
 * Removed URL sorting
 * Removed welcome message
 * Deactivated "Featured Menu Tags"
 
 ###Release notes
+
+v. 1.2.
+
+* Improved design for various resolutions
 
 v. 1.1.
 
@@ -23,14 +28,13 @@ v. 1.1.
 * Minor template changes in footer
 * Minor documentation enhancements
 
-
 v. 1.0
 
 * Initial release
 
 ###Open Tickets
 
-* Responsive Layout
+* Fully responsive layout
 * Fix thumbnail display
 * Fix "Featured Menu Tags" display
 

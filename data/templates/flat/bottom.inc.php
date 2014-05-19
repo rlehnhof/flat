@@ -31,5 +31,8 @@ pageTracker._trackPageview();
 <?php endif;?>
 
 <!--</div>-->
+
+</div> <!-- wrapper -->
+
 </body>
 </html>

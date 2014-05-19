@@ -46,7 +46,8 @@ body {
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1590px;
+	margin-bottom: 20px;
+	max-width: 1280px;
 }
 
 input[type=text],
@@ -152,7 +153,6 @@ html > body div#header.popup h1 {
 #bottom {
 	padding-top: 10px;
 	text-align: center;
-	font-size: xx-small;
 }
 h1 a:link, h1 a:visited, h1 a:focus {
 	color: #2c3e50;
@@ -213,11 +213,12 @@ ul#navigation li.access {
 
 /* BOOKMARKS */
 
-ol#bookmarks {
+div#bookmarks {
     list-style-type: none;
     padding: 0 1em;
     width: 70%;
 }
+
 html > body ol#bookmarks {
     margin: 0 1em;	
     padding: 0;
@@ -272,7 +273,7 @@ div.privateNote {	/* must test */
     font-size: small;
     text-align: right;
 }
-li.xfolkentry {
+.xfolkentry {
     margin-bottom: 20px;
     padding: 0px 0px;
     overflow: auto;
@@ -280,25 +281,24 @@ li.xfolkentry {
 html > body li.xfolkentry {
     /* border-bottom: 1px dotted #AAA; */
 }
-li.xfolkentry div {
-    padding: 0.4em;
+.xfolkentry div {
 }
-li.xfolkentry.deleted {
+.xfolkentry.deleted {
     opacity: 0.5;
 }
 /* Activate if needed:
-li.xfolkentry.private {
+.xfolkentry.private {
     border-left: 3px solid #F00;
 }
-li.xfolkentry.shared {
+.xfolkentry.shared {
     border-left: 3px solid #FA0;
 }
 */
-li.below-threshold > div {			/* wtf is this? */
+.below-threshold > div {			/* wtf is this? */
     border-right: 5px dotted #F00;
 }
 
-li.xfolkentry div div.description span.anchorBookmark {
+.xfolkentry div div.description span.anchorBookmark {
     /*font-family:monospace;*/
 }
 
@@ -351,11 +351,11 @@ li.xfolkentry div div.description span.anchorBookmark {
 div.vote-horiz .voting {
     font-weight: bold;
 }
-li.xfolkentry div.vote-horiz-for {
+.xfolkentry div.vote-horiz-for {
 /*    border-left: 1em solid #ccffbb;*/
 /*    padding-left: 0.5em;*/
 }
-li.xfolkentry div.vote-horiz-against {
+.xfolkentry div.vote-horiz-against {
 /*    border-left: 1em solid #ffcccc;*/
 /*    padding-left: 0.5em;*/
 }
@@ -391,11 +391,17 @@ li.xfolkentry div.vote-horiz-against {
 
 div#sidebar {
     font-size: small;
+	/*
     position: absolute;
     right: 1em;
     top: 10em;
-    width: 25%;
-	background: white;
+	*/
+    position: absolute;
+    right: auto;
+	left: auto;
+	top: 200px;
+    margin-left: 74%;
+	background: transparent;
 }
 div#sidebar a:hover {
 	text-decoration: none;
@@ -620,14 +626,17 @@ form {
 	margin: 0;
 }
 form#search {
-       margin-right: 0.75em;
+       margin-right: 7px;
        color: #CCC;
        font-size: small;
        float: right;
        margin: 0;
+	   margin-top: -7px;
+	   /*
        position: absolute;
        right: 0;
        top: 6.2em;
+	   */
 }
 form label,
 form td,
@@ -765,10 +774,12 @@ a.bookmarklet {
 
 /* two-column link layout */
 
+
 .leftcolumn {
 	float: left;
 	width: 14%;
 	color: #666;
+	padding-top: 15px;
 }
 
 .leftcolumn a:link, .leftcolumn a:visited {
@@ -787,11 +798,90 @@ a.bookmarklet {
 	color: #666;
 	font-size: medium;
 	font-weight: bold;
+
 }
 
 .rightcolumn {
 	float: right;
-	margin-top: -72px;		/* dirty! */
 	background: #ecf0f1;
 	width: 86%;
+	padding-bottom: 15px;
 }
+
+.link, .address, .description, .meta , .tag {
+	margin: 15px;
+}
+
+/* MOBILE */
+
+@media only screen and (min-width: 1280px) {
+
+	div#sidebar {
+		margin-left: 940px;}
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+
+	.leftcolumn {
+		width: 17%;}
+
+	.rightcolumn {
+		width: 83%;}
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 959px) {
+	
+	.leftcolumn {
+		width: 19%;}
+
+	.rightcolumn {
+		width: 81%;}
+
+}
+
+@media only screen and (min-width: 520px) and (max-width: 799px) {
+
+	.leftcolumn {
+		width: 18%;}
+
+	.rightcolumn {
+		width: 82%;}
+
+	#sidebar {
+		display: none;}
+		
+	div#bookmarks {
+		width: 90%;
+		
+	}
+}
+
+@media only screen and (max-width: 519px) {
+
+	.leftcolumn {
+		width: 28%;}
+
+	.rightcolumn {
+		width: 72%;}
+
+	#sidebar {
+		display: none;}
+		
+	div#bookmarks {
+		width: 90%;
+	}
+}
+
+@media print {
+  * {
+    background: transparent;
+	}
+
+  a, a:visited {
+    text-decoration: underline;
+	}
+	
+}
+

@@ -33,6 +33,7 @@ if (isset($rsschannels)) {
  </head>
  <body>
 
+ <div id ="wrapper">
 
 <?php
 $headerstyle = '';
