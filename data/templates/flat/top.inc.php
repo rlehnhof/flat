@@ -69,6 +69,3 @@ if (isset($tipMsg) && $tipMsg!='') {
 	echo '<p class="tipMsg">'. $tipMsg ."</p>\n";
 }
 ?>
-<!--
-<div id="wrapper">
--->

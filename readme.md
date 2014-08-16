@@ -1,4 +1,4 @@
-Flat 1.2 for SemanticScuttle 0.98.5.
+Flat 1.3 for SemanticScuttle 0.98.5.
 ------------------------------------
 
 Flat interface for SemanticScuttle by [Roman Lehnhof] (http://www.lehnhof.net).
@@ -7,7 +7,7 @@ Recommended for single users with admin rights and private bookmarks.
 
 ###Features
 
-* Flat look w/ icons
+* Flat look
 * Mobile-friendly
 * Removed voting system
 * Removed URL sorting
@@ -16,9 +16,14 @@ Recommended for single users with admin rights and private bookmarks.
 
 ###Release notes
 
+v. 1.3
+
+* Improved layout
+* Minor fixes
+
 v. 1.2.
 
-* Improved design for various resolutions
+* Improved layout for various resolutions
 
 v. 1.1.
 
@@ -34,17 +39,14 @@ v. 1.0
 
 ###Open Tickets
 
-* Fully responsive layout
 * Fix thumbnail display
 * Fix "Featured Menu Tags" display
 
 ###Installation
 
 1. Unzip theme and template
-2. Put files in place
-3. Open config.php, scroll to bottom
-4. $theme = 'flat';
-5. Have fun!
+2. Put both **/flat/** folders in place
+3. Set **$theme = 'flat';** in config.php
 
 ###Notes
 

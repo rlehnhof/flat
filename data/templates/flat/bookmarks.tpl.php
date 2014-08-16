@@ -242,11 +242,8 @@ if ($currenttag!= '') {
 	if (getPerPageCount($currentUser) > 10) {
 		echo $pagesBanner; // display a page banner if too many bookmarks to manage
 	}
-
-
+	
 ?>
-
-
 
 <div<?php echo ($start > 0 ? ' start="'. ++$start .'"' : ''); ?> id="bookmarks">
 <?php
@@ -305,16 +302,19 @@ if ($currenttag!= '') {
 		// Edit and delete links
 		$edit = '';
 		if ($bookmarkservice->editAllowed($row)) {
-			$edit = '<a href="' . createURL('edit', $row['bId']) . '">'
+
+			$edit = '<div class="edit">' . "\n"
+				. '      <a href="' . createURL('edit', $row['bId']) . '">'
                 . T_('<span class="icon-pencil-squared"></span>')
-                . '</a>'
-                . ' <a href="#" onclick="deleteBookmark(this, '. $row['bId'] .'); return false;">'
-                . T_('<span class="icon-cancel-circled"></span>')
-                .'</a>';
+                . '</a>' . "\n"
+                . '      <a href="#" onclick="deleteBookmark(this, '. $row['bId'] .'); return false;">'
+                . T_('<span class="icon-cancel-circled"></span>') .'</a>'
+				. "\n" . '    </div>' . "\n";
+		
 		}
 
-		// Last update        ------ DELETE SPANS -----
-		$update = '   <span title="'. T_('Last update') .'">'. date($GLOBALS['shortdate'], strtotime($row['bModified'])). ' </span>';
+		// Last update
+		$update = date($GLOBALS['shortdate'], strtotime($row['bModified']));
 
 		/* 										not needed
 		// User attribution
@@ -414,13 +414,12 @@ if ($currenttag!= '') {
         include 'bookmarks-vote.inc.tpl.php';
 
 		echo '  <div class="leftcolumn">' . "\n";
-		echo "\n" . '<span class="date"> ' . $update . "</span><br />\n";
-		echo $copy . "<br />\n";
-		echo $edit . "<br />\n";
-		echo " </div>\n";		/* left column closing */
-		
+		echo '   <div class="date" title="'. T_('Last update') .'"> ';
+		echo $update . "</div>";
+		echo '   ' . $copy . "\n";
+		echo '   ' . $edit;
+		echo "  </div>\n";		/* left column closing */
 		echo '  <div class="rightcolumn adminBackground">' . "\n";
-		
 		echo '   <div class="link">'
             . '<a href="'. htmlspecialchars($address) .'"'. $rel .' class="taggedlink">'
             . filter($row['bTitle'])
@@ -438,14 +437,14 @@ if ($currenttag!= '') {
 		echo '   <div class="description">'. nl2br($bkDescription) ."</div>\n";
 
 
-		echo '   <div class="meta">' . $cats . ">\n" . "  </div>\n";
+		echo '   <div class="meta">' . $cats . ">" . "  </div>\n";
 		echo $privateNoteField != ''
             ? '    <div class="privateNote" title="'. T_('Private Note on this bookmark') .'">'.$privateNoteField."</div>\n"
             : '';
         echo '  ';
         /* include 'bookmarks-vote-horizontal.inc.tpl.php'; <--- I don't really use this. See file for more info. */
 
-		echo " </div>\n";			/* right column closing */
+		echo "</div>\n";			/* right column closing */
 		
 		echo " </div>\n";
 	}

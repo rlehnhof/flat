@@ -74,9 +74,9 @@ p.error,
 p.success {
     border: 1px solid;
     font-size: small;
-    margin: 0.5em;
+    margin: 0em;
     padding: 0.5em;
-    width: 70%;
+    width: auto;
 }
 p.tipMsg {
     background: #FFFF99;
@@ -134,7 +134,7 @@ h1 {
     padding: 1em;
 }
 html > body h1 {
-    padding-left: 0.5em;
+    padding-left: 0em;
 }
 html > body div#header.popup h1 {
     padding: 0.5em 0.5em 0.5em 50px;
@@ -158,6 +158,10 @@ h1 a:link, h1 a:visited, h1 a:focus {
 	color: #2c3e50;
 	background: white;
 	font-weight: bold;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
 }
 h1 a:hover {
 	text-decoration: none;
@@ -190,7 +194,7 @@ h2 a, h2 a:hover {
 ul#navigation {
     list-style-type: none;
     margin: 0;
-    padding: 1.75em 1em;
+    padding: 1.75em 0.5em;
     width: auto;
 }
 ul#navigation a {
@@ -414,7 +418,7 @@ div#sidebar>div {
 div#sidebar h2 {
     background: white;
     border: 0;
-    color: #666;
+    color: #595959;
     letter-spacing: 0;
     margin: 0;
     padding: 0.5em 0;
@@ -663,7 +667,7 @@ p {
     margin: 1em;
 }
 p#sort {
-    color: #666;
+    color: #595959;
     font-size: medium;
 	font-weight: bold;
     /*float: right;*/
@@ -778,7 +782,7 @@ a.bookmarklet {
 .leftcolumn {
 	float: left;
 	width: 14%;
-	color: #666;
+	color: #595959;
 	padding-top: 15px;
 }
 
@@ -794,11 +798,18 @@ a.bookmarklet {
 	text-decoration: none;
 }
 
-.leftcolumn .date {
+.leftcolumn {
 	color: #666;
 	font-size: medium;
 	font-weight: bold;
+}
 
+.date {
+	color: #595959;
+}
+
+.edit {
+	margin-top: 5px;
 }
 
 .rightcolumn {
@@ -814,73 +825,116 @@ a.bookmarklet {
 
 /* MOBILE */
 
-@media only screen and (min-width: 1280px) {
-
-	div#sidebar {
-		margin-left: 940px;}
-
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1279px) {
+@media only screen and (max-width: 519px) {
 
 	.leftcolumn {
-		width: 17%;}
-
-	.rightcolumn {
-		width: 83%;}
-
-}
-
-@media only screen and (min-width: 800px) and (max-width: 959px) {
+		width: 100%;
+		float: none;
+	}
 	
-	.leftcolumn {
-		width: 19%;}
+	.date {
+		margin-left: 15px;
+		margin-right: 15px;
+		float: left;
+		font-size: 1.2em;
+		padding-top: 3px;
+	}
 
 	.rightcolumn {
-		width: 81%;}
+		width: 100%;
+		float: none;
+		padding-top: 1px;
+		margin-top: 5px;
+	}
+
+	#sidebar {
+		display: none;
+	}
+		
+	div#bookmarks {
+		width: 90%;
+	}
+
+	div.meta a:link, div.meta a:visited {
+		margin-top: 8px;
+	}
 
 }
 
 @media only screen and (min-width: 520px) and (max-width: 799px) {
 
 	.leftcolumn {
-		width: 18%;}
+		width: 18%;
+	}
 
 	.rightcolumn {
-		width: 82%;}
+		width: 82%;
+	}
 
 	#sidebar {
-		display: none;}
+		display: none;
+	}
 		
 	div#bookmarks {
 		width: 90%;
-		
-	}
+	}	
 }
 
-@media only screen and (max-width: 519px) {
-
+@media only screen and (min-width: 800px) and (max-width: 959px) {
+	
 	.leftcolumn {
-		width: 28%;}
+		width: 19%;
+	}
 
 	.rightcolumn {
-		width: 72%;}
-
-	#sidebar {
-		display: none;}
-		
-	div#bookmarks {
-		width: 90%;
+		width: 81%;
 	}
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+
+	.leftcolumn {
+		width: 17%;
+	}
+
+	.rightcolumn {
+		width: 83%;
+	}
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+	div#sidebar {
+		margin-left: 940px;
+	}
+		
+	div#header h1 a {
+		font-size: 1.5em;
+	}
+	
+	div#header li {
+		margin-top: 10px;
+	}
+
+	div#header li a {
+		font-size: 1.5em;
+	}
+	
+	.edit a {
+		font-size: 1.5em;
+	}
+
 }
 
 @media print {
   * {
-    background: transparent;
+		background: transparent;
 	}
 
-  a, a:visited {
-    text-decoration: underline;
+  a:link, a:visited {
+		text-decoration: underline;
 	}
 	
 }
